@@ -45,7 +45,7 @@ diffgene_fdr_imputed_ascend = list()
 diffgene_fdr_ascend = list()
 diffgene_fdr_bulk_ascend = list()
 
-###对数据集中所有cellLine之间进行wilcoxtest
+
 k=5000
 for (i in 1:(cellLine_num-1)) {
   for (ii in (i+1):cellLine_num){

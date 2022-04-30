@@ -4,7 +4,6 @@ normalizeData <- function(x, y = x) {
   return(sweep(x, 2, sf, "/"))
 }
 
-
 #calculate gene_wise correlation
 get.cor.gene <- function(X, Y) {
   sapply(1:nrow(X), function(i) cor(X[i, ], Y[i, ]))
@@ -18,15 +17,8 @@ get.cor.cell <- function(X, Y) {
 
 
 ###############################################################################
-#method = c('downsample_lognorm','bayes','SAVER','scimpute','VIPER','bayNorm')
-#method = c('downsample','bayes','deepimpute','SAVER','scimpute','VIPER','bayNorm')
-#method = c('downsample_lognorm','SAVER','scimpute','bayNorm')
-#method = c('bayes')
-#method = c('downsample_lognorm','bayes')
-#method = c('deepimpute')
+
 method = c('bayes')
-#method = c('scimpute','bayNorm')
-#method = c('SAVER')
 dataset = c('baron1')
 method_number=length(method)
 dataset_number=length(dataset)

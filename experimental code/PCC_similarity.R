@@ -1,11 +1,7 @@
-#dataset = c('sc_10x_5cl','FiveEncode_GSE81861','sc_10x','sc_celseq2','sc_dropseq','293T_Jurkat')
-#dataset = c('sc_celseq2')
+
 dataset = c('sc_10x_5cl','FiveEncode_GSE81861')
-#method = c('bayNorm','VIPER')
-#method = c('bayes','scimpute','DrImpute','ALRA','scRMD','MAGIC','DCA','deepimpute','SAVER')
 method = c('bayes','deepimpute','SAVER','scimpute','VIPER','bayNorm')
 bulk_dataset = c('CellBench_GSE86337_averagelog2TPM','FiveEncode_averagelog2TPM')
-#bulk_dataset = c('CellBench_GSE86337_averagelog2TPM')
 dataset_number=length(dataset)
 method_number=length(method)
 

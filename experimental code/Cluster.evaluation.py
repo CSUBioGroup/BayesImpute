@@ -3,9 +3,14 @@
 
 # In[50]:
 
-
+import time
 import pandas as pd
 import numpy as np
+import sklearn
+from sknetwork.clustering import Louvain, BiLouvain, modularity, bimodularity
+from sklearn.metrics.cluster import normalized_mutual_info_score
+from sklearn.metrics.cluster import adjusted_rand_score
+from sklearn.cluster import KMeans
 
 
 input_path = "/data/"
@@ -23,8 +28,6 @@ imputedData=imputedData.T
 print(input.shape,imputedData.shape,y_true.shape,imputedData.head())
 
 
-
-import time
 start = time.time()
 
 def validate_origin(original_data,true_label):
@@ -61,10 +64,6 @@ end = time.time()
 print ('time:',end-start)
 
 
-# In[75]:
-
-
-import time
 start = time.time()
 def validate_imputation(imputed_data, true_label):
     print('start evaluating imputation....')
@@ -100,16 +99,8 @@ end = time.time()
 print ('time:',end-start)  
 
 
-# In[55]:
 
-
-import sklearn
-from sknetwork.clustering import Louvain, BiLouvain, modularity, bimodularity
-from sklearn.metrics.cluster import normalized_mutual_info_score
-from sklearn.metrics.cluster import adjusted_rand_score
-from sklearn.cluster import KMeans
 start = time.time()
-
 
 [nmi_louvain1, nmi_kmeans1, nmi_spectral1, ari_louvain1, ari_kmeans1, ari_spectral1] = validate_origin(input,y_true)
 print(nmi_louvain1, nmi_kmeans1, nmi_spectral1, ari_louvain1, ari_kmeans1, ari_spectral1)
@@ -120,11 +111,6 @@ print(nmi_louvain2, nmi_kmeans2, nmi_spectral2, ari_louvain2, ari_kmeans2, ari_s
 
 # result=[[nmi_louvain1, nmi_kmeans1, nmi_spectral1, ari_louvain1, ari_kmeans1, ari_spectral1],
 #        [nmi_louvain2, nmi_kmeans2, nmi_spectral2, ari_louvain2, ari_kmeans2, ari_spectral2]]
-
-# print('nmi_louvain1, nmi_kmeans1, nmi_spectral1, ari_louvain1, ari_kmeans1, ari_spectral1,原始数据, 填充数据')
-# print(nmi_louvain1, nmi_kmeans1, nmi_spectral1, ari_louvain1, ari_kmeans1, ari_spectral1)
-# print(nmi_louvain2, nmi_kmeans2, nmi_spectral2, ari_louvain2, ari_kmeans2, ari_spectral2)
-
 
 end = time.time() 
 print ('time:',end-start)

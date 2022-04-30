@@ -14,7 +14,7 @@ originalData = read.table(originalSC_dir,sep = "\t",header = TRUE)
 print(dim(originalData))
 originalData <- as.matrix(originalData)
 
-####test all cellline in the dataset
+####test all cellline in the dataset######
 for (i in 1:(cellLine_num-1)) {
   for (ii in (i+1):cellLine_num){
     print(paste(cellLine[i],'vs',cellLine[ii]))
